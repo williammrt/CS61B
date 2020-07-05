@@ -13,6 +13,14 @@ public class LeapYear {
             System.out.printf("%d is not a leap year.\n", year);
         }
     }
+    private static boolean isLeapTear(int y){
+        if (y %400 ==0){
+            return True;
+        } else if (y%4==0 &&y%100 !=0){
+            return True;
+        } else
+        {return False; }
+    }
 
     /** Must be provided an integer as a command line argument ARGS. */
     public static void main(String[] args) {
