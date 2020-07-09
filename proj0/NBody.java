@@ -43,14 +43,6 @@ public class NBody{
 		StdDraw.show();
 		StdDraw.enableDoubleBuffering();
 		double time =0;
-		while (time <T){
-			double[] xForces = new double[];
-			double[] yForces = new double[];
-
-
-			StdDraw.show();
-			StdDraw.pause(10);
-			time+=dt;
-		}
+		
 	}
 }
