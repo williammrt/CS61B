@@ -44,12 +44,12 @@ public class NBody{
 		StdDraw.enableDoubleBuffering();
 		double time =0;
 		
-		StdOut.printf("%d\n", planets.length);
-		StdOut.printf("%.2e\n", radius);
-		for (int i = 0; i < planets.length; i++) {
-   			 StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
-             planets[i].xxPos, planets[i].yyPos, planets[i].xxVel,
-             planets[i].yyVel, planets[i].mass, planets[i].imgFileName);   
-}
+		System.out.println(arrayPlanets.length);
+		System.out.println(radius);
+		for (int i = 0; i < arrayPlanets.length; i++) {
+   			 System.out.println(
+             arrayPlanets[i].xxPos+' '+ arrayPlanets[i].yyPos+' '+arrayPlanets[i].xxVel+' '+
+             arrayPlanets[i].yyVel+' '+ arrayPlanets[i].mass+' '+arrayPlanets[i].imgFileName);   
+		}
 	}
 }
