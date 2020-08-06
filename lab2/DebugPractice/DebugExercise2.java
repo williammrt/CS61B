@@ -6,7 +6,7 @@ public class DebugExercise2 {
     /** Returns the max of a and b. Do not step into this function. 
       * This function may have a bug, but if it does, you should find it
       * by stepping over, not into. */
-    public static int max(int a, int b) {
+    public static int false_max(int a, int b) {
         int w = (b - a) >> 31;
         /* If you're stepping into this function, click the
            step out button because you're not going to learn anything. */
@@ -14,6 +14,13 @@ public class DebugExercise2 {
 
         int max = b & w | a & z;
         return max;
+    }
+    public static int max(int a, int b){
+        if (a>b){
+            return a;
+
+        }
+        return b;
     }
 
 
@@ -60,7 +67,7 @@ public class DebugExercise2 {
         int i = 0;
         int sum = 0;
         while (i < x.length) {
-            sum = sum + add(sum, x[i]);
+            sum = add(sum, x[i]);
             i = i + 1;
         }
         return sum;

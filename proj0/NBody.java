@@ -47,6 +47,10 @@ public class NBody{
 		double[] xForce = new double[arrayPlanets.length];
 		double[] yForce = new double[arrayPlanets.length];
 		int count=0;
+		for (int i=0;i<arrayPlanets.length;i++){
+				xForce[count]=0;
+				yForce[count]=0;		
+			}
 		while (time <T){
 			for (int i=0;i<arrayPlanets.length;i++){
 				xForce[count]=arrayPlanets[i].calcNetForceExertedByX(arrayPlanets);
@@ -56,7 +60,7 @@ public class NBody{
 			for (int i=0;i<arrayPlanets.length;i++){
 				arrayPlanets[i].update(dT,xForce[i],yForce[i]);
 			}
-			
+
 			StdDraw.setScale(-256, 256);
 			StdDraw.clear();
 			StdDraw.picture(0, 0, "images/starfield.jpg");

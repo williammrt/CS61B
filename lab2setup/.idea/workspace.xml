@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1e49abe3-5055-4d17-b63c-2c13c71da727" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitmodules" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1e5C8p4rFBSNCnO9sh85jxVQndY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../library-sp18/javalib" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager" selected="JUnit.DogTest.testSmall">
+    <configuration name="DogTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lab2setup" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DogTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DogTest.testSmall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lab2setup" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DogTest" />
+      <option name="METHOD_NAME" value="testSmall" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DogTest.testSmall" />
+        <item itemvalue="Android JUnit.DogTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1e49abe3-5055-4d17-b63c-2c13c71da727" name="Default Changelist" comment="" />
+      <created>1593601909452</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593601909452</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="473" y="98" key="FileChooserDialogImpl" timestamp="1594265464356">
+      <screen x="94" y="0" width="1272" height="768" />
+    </state>
+    <state x="473" y="98" key="FileChooserDialogImpl/94.0.1272.768@94.0.1272.768" timestamp="1594265464356" />
+    <state width="1126" height="169" key="GridCell.Tab.0.bottom" timestamp="1594265505322">
+      <screen x="94" y="0" width="1272" height="768" />
+    </state>
+    <state width="1126" height="169" key="GridCell.Tab.0.bottom/94.0.1272.768@94.0.1272.768" timestamp="1594265505322" />
+    <state width="1126" height="169" key="GridCell.Tab.0.center" timestamp="1594265505322">
+      <screen x="94" y="0" width="1272" height="768" />
+    </state>
+    <state width="1126" height="169" key="GridCell.Tab.0.center/94.0.1272.768@94.0.1272.768" timestamp="1594265505322" />
+    <state width="1126" height="169" key="GridCell.Tab.0.left" timestamp="1594265505322">
+      <screen x="94" y="0" width="1272" height="768" />
+    </state>
+    <state width="1126" height="169" key="GridCell.Tab.0.left/94.0.1272.768@94.0.1272.768" timestamp="1594265505322" />
+    <state width="1126" height="169" key="GridCell.Tab.0.right" timestamp="1594265505322">
+      <screen x="94" y="0" width="1272" height="768" />
+    </state>
+    <state width="1126" height="169" key="GridCell.Tab.0.right/94.0.1272.768@94.0.1272.768" timestamp="1594265505322" />
+    <state x="333" y="86" key="NewModule_or_Project.wizard" timestamp="1594265496695">
+      <screen x="94" y="0" width="1272" height="768" />
+    </state>
+    <state x="333" y="86" key="NewModule_or_Project.wizard/94.0.1272.768@94.0.1272.768" timestamp="1594265496695" />
+    <state x="173" y="0" key="SettingsEditor" timestamp="1594264871264">
+      <screen x="94" y="0" width="1272" height="768" />
+    </state>
+    <state x="173" y="0" key="SettingsEditor/94.0.1272.768@94.0.1272.768" timestamp="1594264871264" />
+  </component>
+</project>
