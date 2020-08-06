@@ -38,7 +38,7 @@ public class Percolation {
     }
 
     public void open(int row, int col) {
-        if (row < 0 || row > bound - 1 || col < 0 || col > bound - 1) {
+        if (row < 0 || row > (bound - 1) || col < 0 || col > (bound - 1)) {
             throw new java.lang.IndexOutOfBoundsException();
         }
         if (openness[row][col]) {
@@ -49,10 +49,10 @@ public class Percolation {
         if (col == 0 && isOpen(row, col + 1)) {
             poSystem.union(xyToN(row, col), xyToN(row, col + 1));
         }
-        if (col == bound - 1 && isOpen(row, col + 1)) {
+        if (col == (bound - 1) && isOpen(row, col + 1)) {
             poSystem.union(xyToN(row, col), xyToN(row, col - 1));
         }
-        if (row < bound - 1 && isOpen(row + 1, col)) {
+        if (row < (bound - 1) && isOpen(row + 1, col)) {
             poSystem.union(xyToN(row, col), xyToN(row + 1, col));
         }
         if (row > 0 && isOpen(row - 1, col)) {
@@ -63,17 +63,17 @@ public class Percolation {
     }       // open the site (row, col) if it is not open already
 
     public boolean isOpen(int row, int col) {
-        if (row < 0 || row > bound - 1 || col < 0 || col > bound - 1) {
+        if (row < 0 || row > (bound - 1) || col < 0 || col > (bound - 1)) {
             throw new java.lang.IndexOutOfBoundsException();
         }
         return openness[row][col];
     }  // is the site (row, col) open?
 
     public boolean isFull(int row, int col) {
-        if (row < 0 || row > bound - 1 || col < 0 || col > bound - 1) {
+        if (row < 0 || row > (bound - 1) || col < 0 || col > (bound - 1)) {
             throw new java.lang.IndexOutOfBoundsException();
         }
-        return poSystem.connected(xyToN(row, col), top) && isOpen(row,col);
+        return poSystem.connected(xyToN(row, col), top) && isOpen(row, col);
     }  // is the site (row, col) full?
 
     public int numberOfOpenSites() {
