@@ -46,10 +46,10 @@ public class Percolation {
         }
         openness[row][col] = true;
 
-        if (col < (bound-1) && isOpen(row, col + 1)) {
+        if (col < (bound - 1) && isOpen(row, col + 1)) {
             poSystem.union(xyToN(row, col), xyToN(row, col + 1));
         }
-        if (col> 0 && isOpen(row, col -  1)) {
+        if (col > 0 && isOpen(row, col - 1)) {
             poSystem.union(xyToN(row, col), xyToN(row, col - 1));
         }
         if (row < (bound - 1) && isOpen(row + 1, col)) {

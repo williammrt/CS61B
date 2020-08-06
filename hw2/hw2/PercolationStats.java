@@ -6,12 +6,15 @@ import edu.princeton.cs.introcs.StdRandom;
 
 public class PercolationStats {
     private Percolation[] experiments;
-    private int[] results;
+    private double[] results;
     private int[] openSequences;
 
     public PercolationStats(int N, int T, PercolationFactory pf) {
+        if (N <= 0 || T <= 0) {
+            throw new java.lang.IllegalArgumentException();
+        }
         experiments = new Percolation[T];
-        results = new int[T];
+        results = new double[T];
         openSequences = new int[N * N];
 
         for (int i = 0; i < T; i += 1) {
@@ -28,13 +31,13 @@ public class PercolationStats {
         for (int i = 0; i < T; i += 1) {
             StdRandom.shuffle(openSequences);
             int countSequence = 0;
-            while (!experiments[i].percolates() && countSequence<openSequences.length) {
+            while (!experiments[i].percolates() && countSequence < openSequences.length) {
                 int row = openSequences[countSequence] / N;
                 int col = openSequences[countSequence] % N;
                 experiments[i].open(row, col);
                 countSequence += 1;
             }
-            results[i] = countSequence;
+            results[i] = countSequence * 1.0 / N;
 
 
         }
