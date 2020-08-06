@@ -73,7 +73,7 @@ public class Percolation {
         if (row < 0 || row > bound - 1 || col < 0 || col > bound - 1) {
             throw new java.lang.IndexOutOfBoundsException();
         }
-        return poSystem.connected(xyToN(row, col), top);
+        return poSystem.connected(xyToN(row, col), top) && isOpen(row,col);
     }  // is the site (row, col) full?
 
     public int numberOfOpenSites() {
@@ -85,13 +85,17 @@ public class Percolation {
     }              // does the system percolate?
 
     public static void main(String[] args) {
-        Percolation test1 = new Percolation(10);
+        /* Percolation test1 = new Percolation(10);
         for (int i = 0; i < 10; i += 1) {
             test1.open(i, 5);
+            System.out.println(i);
             System.out.println(test1.percolates());
+            System.out.println(test1.isFull(i,5));
+            System.out.println(test1.isFull(i,6));
         }
 
-
+        Percolation test2=new Percolation(10);
+        */
     }  // use for unit testing (not required)
 
 }

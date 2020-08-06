@@ -3,7 +3,6 @@ package hw2;
 import edu.princeton.cs.introcs.StdStats;
 import edu.princeton.cs.introcs.StdRandom;
 
-import java.lang.Math;
 
 public class PercolationStats {
     private Percolation[] experiments;
@@ -30,7 +29,9 @@ public class PercolationStats {
             StdRandom.shuffle(openSequences);
             int countSequence = 0;
             while (!experiments[i].percolates()) {
-                experiments[i].open(openSequences[countSequence] / N, openSequences[countSequence] % N);
+                int row=openSequences[countSequence] / N;
+                int col=openSequences[countSequence] % N;
+                experiments[i].open(row, col);
                 countSequence += 1;
             }
             results[i] = countSequence;
