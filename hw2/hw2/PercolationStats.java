@@ -28,7 +28,7 @@ public class PercolationStats {
         for (int i = 0; i < T; i += 1) {
             StdRandom.shuffle(openSequences);
             int countSequence = 0;
-            while (!experiments[i].percolates()) {
+            while (!experiments[i].percolates() && countSequence<openSequences.length) {
                 int row = openSequences[countSequence] / N;
                 int col = openSequences[countSequence] % N;
                 experiments[i].open(row, col);
