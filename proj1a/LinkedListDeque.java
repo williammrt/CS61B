@@ -1,41 +1,57 @@
-public class LinkedListDeque<T>{
+public class LinkedListDeque<genType> {
 
-    private static class genNode<insideT>{
+    private static class genNode {
         public genNode prev;
-        public insideT item;
+        public genTypeT item;
         public genNode next;
-        
-        public genNode(insideT i,genNode n){
+
+        public genNode(genNode p, genType i, genNode n) {
+            prev = p;
             item = i;
-            next=n;
+            next = n;
         }
     }
 
-    private genNode<T> sentinel;
-    private genNode<T> last;
+    private genNode<genType> sentinel;
     private int size;
 
 
-    public LinkedListDeque(){
-        size=0;
-    }
-    public LinkedListDeque(T item){
-        size=1;
+    public LinkedListDeque() {
+        size = 0;
+        sentinel = new genNode<genType>(null, null, null);
+        sentinel.prev = sentinel;
+        sentinel.next = sentinel;
+
     }
 
-    public void addFirst(T item){
-        size+=1;
-    }
-    public void addLast(T item){
-        size+=1;
-        last.next = new genNode<T>(item,null);
-        last = last.next;
-
+    public LinkedListDeque(genType item) {
+        size = 1;
+        sentinel = new genNode<genType>(null, null, null);
+        sentinel.next= new genNode(sentinel,item,sentinel);
+        sentinel.prev= sentinel.next;
 
 
     }
-    public boolean isEmpty(){
-        if (size==0){
+
+    public void addFirst(genType item) {
+        size += 1;
+        genNode tempPointer=sentinel.next;
+        sentinel.next = new genNode(sentinel,item,tempPointer);
+        tempPointer.prev=sentinel.next;
+
+    }
+
+    public void addLast(genType item) {
+        size += 1;
+        genNode tempPointer = sentinel.prev;
+        tempPointer.next=new genNode(tempPointer,item,sentinel);
+        sentinel.prev=tempPointer.next;
+
+
+    }
+
+    public boolean isEmpty() {
+        if (size == 0) {
             return true;
         }
         return false;
@@ -45,13 +61,59 @@ public class LinkedListDeque<T>{
         return size;
     }
 
-    public void printDeque(){}
-    public T removeFirst(){
-        size-=1;
+    public void printDeque() {
+        genNode tempPointer = sentinel.next;
+        if (tempPointer!=sentinel){
+            System.out.println(tempPointer.item);
+            tempPointer=tempPointer.next;
+
+        }
     }
-    public T removeLast(){
-        size-=1;
+
+    public genType removeFirst() {
+        if (size==0){
+            return null;
+        }
+        size -= 1;
+        genNode tempPointer =sentinel.next.next;
+        sentinel.next=tempPointer;
+        tempPointer.prev=sentinel;
+
     }
-    public T get(int index){}
-    public T getRecursive(int index){}
+
+    public genType removeLast() {
+        if (size==0){
+            return null;
+        }
+        size -= 1;
+        genNode tempPointer = sentinel.prev.prev;
+        tempPointer.next=sentinel;
+        sentinel.prev=tempPointer;
+
+    }
+
+    public genType get(int index) {
+        if (index>=size || index <0){
+            return null;
+        }
+        genNode tempPointer = sentinel.next;
+        int tempIndex=index;
+        while(tempIndex>0){
+            tempPointer=tempPointer.next;
+            tempIndex-=1;
+        }
+        return tempPointer.item;
+    }
+
+    public genType getRecursive(int index) {
+        if (index>=size ||index<0){
+            return null;
+        }
+        else if (index>0){
+            return this.next.getRecursive(index-1);
+        }
+        else{
+            return this.item;
+        }
+    }
 }
