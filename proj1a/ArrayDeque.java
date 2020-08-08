@@ -121,7 +121,7 @@ public class ArrayDeque<T> {
         T retreive = items[retreivePos];
         items[retreivePos] = null;
         nextLast = retreivePos;
-        if (size <= items.length / 4 && items.length / 4 >= 8) {
+        if (size <= (items.length / 4) && (items.length / 2) >= 8) {
             downSize();
         }
         return retreive;
@@ -135,16 +135,24 @@ public class ArrayDeque<T> {
         int actualIndex = (nextFirst + 1 + index) % items.length;
         return items[actualIndex];
     }
-/*
+
     public static void main(String[] args) {
 
         ArrayDeque<Integer> test1 = new ArrayDeque<Integer>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 8; i++) {
             test1.addLast(i);
-            test1.printDeque();
         }
+        test1.addFirst(9);
+        test1.removeLast();
+        test1.removeLast();
+        test1.removeLast();
+        test1.removeLast();
+        test1.removeLast();
+        test1.removeLast();
+        test1.removeLast();
 
 
-    }*/
+
+    }
 
 }
