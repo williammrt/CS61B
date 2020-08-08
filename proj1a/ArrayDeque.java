@@ -45,7 +45,7 @@ public class ArrayDeque<T> {
         /* missing*/
         items = smaller;
         nextFirst = items.length - 1;
-        nextLast = items.length / 4;
+        nextLast = items.length / 2;
     }
 
     public void addFirst(T item) {
@@ -104,7 +104,7 @@ public class ArrayDeque<T> {
         T retreive = items[retreivePos];
         items[retreivePos] = null;
         nextFirst = retreivePos;
-        if (size <= items.length / 4 && items.length > 8) {
+        if (size <= items.length / 4 && items.length / 4 >= 8) {
             downSize();
         }
         return retreive;
@@ -121,7 +121,7 @@ public class ArrayDeque<T> {
         T retreive = items[retreivePos];
         items[retreivePos] = null;
         nextLast = retreivePos;
-        if (size <= items.length / 4 && items.length > 8) {
+        if (size <= items.length / 4 && items.length / 4 >= 8) {
             downSize();
         }
         return retreive;
