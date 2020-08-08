@@ -104,9 +104,9 @@ public class ArrayDeque<T> {
         T retreive = items[retreivePos];
         items[retreivePos] = null;
         nextFirst = retreivePos;
-        if (size <= items.length / 4 && items.length / 4 >= 8) {
-            downSize();
-        }
+        //if (size <= items.length / 4 && items.length / 4 >= 8) {
+        //    downSize();
+        // }
         return retreive;
 
     }
@@ -121,9 +121,9 @@ public class ArrayDeque<T> {
         T retreive = items[retreivePos];
         items[retreivePos] = null;
         nextLast = retreivePos;
-        if (size <= (items.length / 4) && (items.length / 2) >= 8) {
-            downSize();
-        }
+        // if (size <= (items.length / 4) && (items.length / 2) >= 8) {
+        //    downSize();
+        //}
         return retreive;
 
     }
@@ -136,7 +136,7 @@ public class ArrayDeque<T> {
         return items[actualIndex];
     }
 
-    public static void main(String[] args) {
+    /* public static void main(String[] args) {
 
         ArrayDeque<Integer> test1 = new ArrayDeque<Integer>();
         for (int i = 0; i < 8; i++) {
@@ -151,8 +151,28 @@ public class ArrayDeque<T> {
         test1.removeLast();
         test1.removeLast();
 
+        ArrayDeque<Integer> test2 = new ArrayDeque<Integer>();
+        test2.addFirst(0);
+        test2.addFirst(1);
+        test2.addFirst(2);
+        test2.addLast(3);
+        test2.addLast(4);
+        test2.removeLast();
+        test2.addLast(6);
+        test2.get(4);
+        test2.addFirst(8);
+        test2.addFirst(9);
+        test2.get(6);    // ==> 6
+        test2.addFirst(11);
+        test2.addLast(12);
+        test2.removeLast(); //==> 12
+        test2.removeFirst();//==> 11
+        test2.get(4);// ==> 0
+        test2.removeFirst();//  ==> 9
+        test2.removeFirst(); // ==> 8
+        test2.removeLast();
 
 
-    }
+    }*/
 
 }
