@@ -15,6 +15,14 @@ public class ArrayDeque<T> {
     private void upSize() {
         T[] bigger = (T[]) new Object[items.length * 2];
         /* missing*/
+        int startPos = (nextFirst + 1) % items.length;
+        if (startPos == 0) {
+            System.arraycopy(items, 0, bigger, 0, items.length);
+        } else {
+
+            System.arraycopy(items, startPos, bigger, 0, items.length - startPos);
+            System.arraycopy(items, 0, bigger, items.length - startPos, startPos);
+        }
 
 
         items = bigger;
@@ -56,9 +64,9 @@ public class ArrayDeque<T> {
     public boolean isEmpty() {
         if (size == 0) {
             return true;
-        } else {
-            return false;
         }
+        return false;
+
     }
 
     public int size() {
