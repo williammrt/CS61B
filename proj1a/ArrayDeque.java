@@ -32,10 +32,20 @@ public class ArrayDeque<T> {
 
     private void downSize() {
         T[] smaller = (T[]) new Object[items.length / 2];
+        int startPos = (nextFirst + 1) % items.length;
+        int endPos = (nextLast - 1 + items.length) % items.length;
+        if (startPos < endPos) {
+            System.arraycopy(items, startPos, smaller, 0, items.length);
+        } else {
+            System.arraycopy(items, startPos, smaller, 0, items.length - startPos);
+            System.arraycopy(items, 0, smaller, items.length - startPos, endPos + 1);
+        }
 
 
         /* missing*/
         items = smaller;
+        nextFirst = items.length - 1;
+        nextLast = items.length / 4;
     }
 
     public void addFirst(T item) {
@@ -88,11 +98,15 @@ public class ArrayDeque<T> {
         if (size == 0) {
             return null;
         }
+
         size -= 1;
         int retreivePos = (nextFirst + 1) % items.length;
         T retreive = items[retreivePos];
         items[retreivePos] = null;
         nextFirst = retreivePos;
+        if (size <= items.length / 4 && items.length > 8) {
+            downSize();
+        }
         return retreive;
 
     }
@@ -101,11 +115,15 @@ public class ArrayDeque<T> {
         if (size == 0) {
             return null;
         }
+
         size -= 1;
         int retreivePos = (nextLast - 1 + items.length) % items.length;
         T retreive = items[retreivePos];
         items[retreivePos] = null;
         nextLast = retreivePos;
+        if (size <= items.length / 4 && items.length > 8) {
+            downSize();
+        }
         return retreive;
 
     }
