@@ -22,6 +22,8 @@ public class TestPalindrome {
         assertFalse(palindrome.isPalindrome("cat"));
         assertFalse(palindrome.isPalindrome("abab"));
         assertFalse(palindrome.isPalindrome("aaaaab"));
+        assertFalse(palindrome.isPalindrome("=caw"));
+
 
         assertTrue(palindrome.isPalindrome("abba"));
         assertTrue(palindrome.isPalindrome("qaq"));
@@ -29,6 +31,7 @@ public class TestPalindrome {
         assertTrue(palindrome.isPalindrome("hahahahahah"));
         assertTrue(palindrome.isPalindrome("n"));
         assertTrue(palindrome.isPalindrome(""));
+        assertTrue(palindrome.isPalindrome("=q="));
 
 
     }
@@ -39,12 +42,18 @@ public class TestPalindrome {
         assertTrue(palindrome.isPalindrome("n", new OffByOne()));
         assertTrue(palindrome.isPalindrome("abab", new OffByOne()));
         assertTrue(palindrome.isPalindrome("aabb", new OffByOne()));
-        assertTrue(palindrome.isPalindrome("acegfdb", new OffByOne()));
+        assertTrue(palindrome.isPalindrome("detrude", new OffByOne()));
+        assertTrue(palindrome.isPalindrome("", new OffByOne()));
+        assertTrue(palindrome.isPalindrome("<=", new OffByOne()));
+        assertTrue(palindrome.isPalindrome("AB", new OffByOne()));
+
 
         assertFalse(palindrome.isPalindrome("aaaaab", new OffByOne()));
         assertFalse(palindrome.isPalindrome("qaq", new OffByOne()));
         assertFalse(palindrome.isPalindrome("apple", new OffByOne()));
         assertFalse(palindrome.isPalindrome("abba", new OffByOne()));
+        assertFalse(palindrome.isPalindrome("=<=", new OffByOne()));
+        assertFalse(palindrome.isPalindrome("aB", new OffByOne()));
 
 
     }
