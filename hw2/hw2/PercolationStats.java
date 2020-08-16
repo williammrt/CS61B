@@ -21,7 +21,7 @@ public class PercolationStats {
             experiments[i] = pf.make(N);
             results[i] = 0;
         }
-        for (int i = 0; i < N*N; i += 1) {
+        for (int i = 0; i < N * N; i += 1) {
             openSequences[i] = i;
         }
 
@@ -37,7 +37,7 @@ public class PercolationStats {
                 experiments[i].open(row, col);
                 countSequence += 1;
             }
-            results[i] = countSequence * 1.0 / N;
+            results[i] = countSequence * 1.0 / openSequences.length;
 
 
         }

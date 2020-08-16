@@ -26,8 +26,8 @@ public class Percolation {
             for (int j = 0; j < bound; j += 1) {
                 openness[i][j] = false;
             }
-            poSystem.union(xyToN(0, i), top);
-            poSystem.union(xyToN(bound - 1, i), bottum);
+            //poSystem.union(xyToN(0, i), top);
+            //poSystem.union(xyToN(bound - 1, i), bottum);
         }
 
 
@@ -45,6 +45,13 @@ public class Percolation {
             return;
         }
         openness[row][col] = true;
+
+        if (row == 0) {
+            poSystem.union(xyToN(row, col), top);
+        }
+        if (row == (bound - 1)) {
+            poSystem.union(xyToN(row, col), bottum);
+        }
 
         if (col < (bound - 1) && isOpen(row, col + 1)) {
             poSystem.union(xyToN(row, col), xyToN(row, col + 1));
