@@ -8,6 +8,9 @@ public class PercolationStats {
     private Percolation[] experiments;
     private double[] results;
     private int[] openSequences;
+    private double meanPreCalculated;
+    private double stddevPreCalculated;
+    private double sqrtLengthPrecalculated;
 
     public PercolationStats(int N, int T, PercolationFactory pf) {
         if (N <= 0 || T <= 0) {
@@ -41,6 +44,9 @@ public class PercolationStats {
 
 
         }
+        meanPreCalculated = mean();
+        stddevPreCalculated = stddev();
+        sqrtLengthPrecalculated = Math.sqrt(experiments.length);
 
 
     }   // perform T independent experiments on an N-by-N grid
@@ -55,11 +61,12 @@ public class PercolationStats {
     }                                         // sample standard deviation of percolation threshold
 
     public double confidenceLow() {
-        return mean() - 1.96 * stddev() / Math.sqrt(experiments.length);
+        return meanPreCalculated - 1.96 * stddevPreCalculated / sqrtLengthPrecalculated;
     }                                  // low endpoint of 95% confidence interval
 
     public double confidenceHigh() {
-        return mean() + 1.96 * stddev() / Math.sqrt(experiments.length);
+
+        return meanPreCalculated + 1.96 * stddevPreCalculated / sqrtLengthPrecalculated;
     }
 
 }
